@@ -8,8 +8,8 @@
 export default {
 	name: 'SearchBar',
 	methods: {
-		onInput: function(event) {
-			console.log(event.target.value);
+		onInput() {
+			this.$emit('termChange', event.target.value);
 		},
 	},
 };

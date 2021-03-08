@@ -1,8 +1,13 @@
 <template>
 	<div>
 		<SearchBar @termChange="onTermChange"></SearchBar>
-		<VideoDetail :video="selectedVideo"></VideoDetail>
-		<VideoList v-bind:videos="videos" @videoSelect="onVideoSelect"></VideoList>
+		<div class="videos">
+			<VideoDetail :video="selectedVideo"></VideoDetail>
+			<VideoList
+				v-bind:videos="videos"
+				@videoSelect="onVideoSelect"
+			></VideoList>
+		</div>
 	</div>
 </template>
 
@@ -43,11 +48,12 @@ export default {
 
 <style>
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
+	background-color: #f1faee;
+	color: #1d3557;
+	height: 100vh;
+}
+
+.videos {
+	display: flex;
 }
 </style>
